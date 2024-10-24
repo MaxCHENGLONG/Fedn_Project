@@ -1,0 +1,10 @@
+- git clone https://github.com/scaleoutsystems/fedn.git
+- fedn package create --path client
+- fedn run build --path client
+- export FEDN_PACKAGE_EXTRACT_DIR=package
+- export FEDN_DATA_PATH=./data/clients/1/mnist.pt
+- export CLIENT_NUM=2
+- export ALPHA=10
+- export IMBALANCE_RATIOS=1.0,1.0,1.0,1.0,1.0
+- export CLIENT_ID=1
+- fedn client start -in client1.yaml --secure=True --force-ssl
