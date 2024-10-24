@@ -1,0 +1,502 @@
+[
+    {
+        "model_id": "tmpjw6nzchr.npz",
+        "training_loss": 6.261122703552246,
+        "training_accuracy": 0.08168767392635345,
+        "test_loss": 5.530158996582031,
+        "test_accuracy": 0.12457142770290375,
+        "global_path_norm": 6.332984283097674,
+        "local_path_norm": 6.332984283097674,
+        "time": "2024-10-24T20:49:32.043722"
+    },
+    {
+        "model_id": "tmpy29vi27y.npz",
+        "training_loss": 5.78129243850708,
+        "training_accuracy": 0.08168767392635345,
+        "test_loss": 5.153748512268066,
+        "test_accuracy": 0.12457142770290375,
+        "global_path_norm": 6.643502543193037,
+        "local_path_norm": 6.643502543193037,
+        "time": "2024-10-24T20:49:39.352816"
+    },
+    {
+        "model_id": "tmp0hglcfyq.npz",
+        "training_loss": 5.35289192199707,
+        "training_accuracy": 0.08168767392635345,
+        "test_loss": 4.912359237670898,
+        "test_accuracy": 0.12457142770290375,
+        "global_path_norm": 6.953102163213024,
+        "local_path_norm": 6.953102163213024,
+        "time": "2024-10-24T20:49:45.594923"
+    },
+    {
+        "model_id": "tmp7y7xva2r.npz",
+        "training_loss": 5.655276298522949,
+        "training_accuracy": 0.08168767392635345,
+        "test_loss": 5.168153762817383,
+        "test_accuracy": 0.12457142770290375,
+        "global_path_norm": 7.236054524179893,
+        "local_path_norm": 7.236054524179893,
+        "time": "2024-10-24T20:49:53.012387"
+    },
+    {
+        "model_id": "tmpli4li69u.npz",
+        "training_loss": 5.705386638641357,
+        "training_accuracy": 0.08168767392635345,
+        "test_loss": 5.147615909576416,
+        "test_accuracy": 0.12457142770290375,
+        "global_path_norm": 7.481020818911077,
+        "local_path_norm": 7.481020818911077,
+        "time": "2024-10-24T20:49:59.249048"
+    },
+    {
+        "model_id": "tmpu7qv6gum.npz",
+        "training_loss": 5.751840591430664,
+        "training_accuracy": 0.08214239031076431,
+        "test_loss": 5.199983596801758,
+        "test_accuracy": 0.12514285743236542,
+        "global_path_norm": 7.700391427531917,
+        "local_path_norm": 7.700391427531917,
+        "time": "2024-10-24T20:50:06.112733"
+    },
+    {
+        "model_id": "tmpbygmos06.npz",
+        "training_loss": 5.737473487854004,
+        "training_accuracy": 0.08220735192298889,
+        "test_loss": 5.263209342956543,
+        "test_accuracy": 0.12495238333940506,
+        "global_path_norm": 7.905799822750532,
+        "local_path_norm": 7.905799822750532,
+        "time": "2024-10-24T20:50:13.993498"
+    },
+    {
+        "model_id": "tmpjbj3r64i.npz",
+        "training_loss": 5.615291595458984,
+        "training_accuracy": 0.08529297262430191,
+        "test_loss": 5.19998836517334,
+        "test_accuracy": 0.12990476191043854,
+        "global_path_norm": 8.110858289125714,
+        "local_path_norm": 8.110858289125714,
+        "time": "2024-10-24T20:50:21.413818"
+    },
+    {
+        "model_id": "tmpsil6sgoe.npz",
+        "training_loss": 5.434533596038818,
+        "training_accuracy": 0.0859425738453865,
+        "test_loss": 5.086877822875977,
+        "test_accuracy": 0.12971428036689758,
+        "global_path_norm": 8.308158601270925,
+        "local_path_norm": 8.308158601270925,
+        "time": "2024-10-24T20:50:28.829293"
+    },
+    {
+        "model_id": "tmpwgt7ngfo.npz",
+        "training_loss": 5.234200477600098,
+        "training_accuracy": 0.1079966202378273,
+        "test_loss": 4.971873760223389,
+        "test_accuracy": 0.14038094878196716,
+        "global_path_norm": 8.486069652277816,
+        "local_path_norm": 8.486069652277816,
+        "time": "2024-10-24T20:50:35.629646"
+    },
+    {
+        "model_id": "tmph45mo4va.npz",
+        "training_loss": 5.071503639221191,
+        "training_accuracy": 0.15161751210689545,
+        "test_loss": 4.880339622497559,
+        "test_accuracy": 0.1723809540271759,
+        "global_path_norm": 8.645367553910702,
+        "local_path_norm": 8.645367553910702,
+        "time": "2024-10-24T20:50:42.726821"
+    },
+    {
+        "model_id": "tmp03sg9p0g.npz",
+        "training_loss": 4.954272747039795,
+        "training_accuracy": 0.17769910395145416,
+        "test_loss": 4.84416389465332,
+        "test_accuracy": 0.190476194024086,
+        "global_path_norm": 8.80340388096317,
+        "local_path_norm": 8.80340388096317,
+        "time": "2024-10-24T20:50:48.715278"
+    },
+    {
+        "model_id": "tmpnxrtkys1.npz",
+        "training_loss": 4.611537933349609,
+        "training_accuracy": 0.20982201397418976,
+        "test_loss": 4.532475471496582,
+        "test_accuracy": 0.21542857587337494,
+        "global_path_norm": 8.954733712365488,
+        "local_path_norm": 8.954733712365488,
+        "time": "2024-10-24T20:50:55.903868"
+    },
+    {
+        "model_id": "tmpow_5ra7q.npz",
+        "training_loss": 4.563924789428711,
+        "training_accuracy": 0.22538001835346222,
+        "test_loss": 4.496057510375977,
+        "test_accuracy": 0.22723808884620667,
+        "global_path_norm": 9.09559827551228,
+        "local_path_norm": 9.09559827551228,
+        "time": "2024-10-24T20:51:04.070400"
+    },
+    {
+        "model_id": "tmpcu5l2lk0.npz",
+        "training_loss": 4.540785312652588,
+        "training_accuracy": 0.2273613065481186,
+        "test_loss": 4.431365013122559,
+        "test_accuracy": 0.23752380907535553,
+        "global_path_norm": 9.2303904345625,
+        "local_path_norm": 9.2303904345625,
+        "time": "2024-10-24T20:51:10.152733"
+    },
+    {
+        "model_id": "tmp005o76ji.npz",
+        "training_loss": 4.255413055419922,
+        "training_accuracy": 0.25136417150497437,
+        "test_loss": 4.146942138671875,
+        "test_accuracy": 0.2592380940914154,
+        "global_path_norm": 9.363012559048942,
+        "local_path_norm": 9.363012559048942,
+        "time": "2024-10-24T20:51:17.506691"
+    },
+    {
+        "model_id": "tmpe7kjr52o.npz",
+        "training_loss": 4.156527996063232,
+        "training_accuracy": 0.2588995695114136,
+        "test_loss": 4.008816719055176,
+        "test_accuracy": 0.2685714364051819,
+        "global_path_norm": 9.494962561334178,
+        "local_path_norm": 9.494962561334178,
+        "time": "2024-10-24T20:51:24.955334"
+    },
+    {
+        "model_id": "tmpwx6twwjt.npz",
+        "training_loss": 4.098391056060791,
+        "training_accuracy": 0.2654930353164673,
+        "test_loss": 3.9560792446136475,
+        "test_accuracy": 0.27752381563186646,
+        "global_path_norm": 9.624714735683657,
+        "local_path_norm": 9.624714735683657,
+        "time": "2024-10-24T20:51:32.073668"
+    },
+    {
+        "model_id": "tmp9mlb19i4.npz",
+        "training_loss": 4.257678031921387,
+        "training_accuracy": 0.25867220759391785,
+        "test_loss": 4.121384620666504,
+        "test_accuracy": 0.27161905169487,
+        "global_path_norm": 9.749637890473744,
+        "local_path_norm": 9.749637890473744,
+        "time": "2024-10-24T20:51:38.025460"
+    },
+    {
+        "model_id": "tmpxz19k2o9.npz",
+        "training_loss": 4.133113384246826,
+        "training_accuracy": 0.27120956778526306,
+        "test_loss": 4.0216064453125,
+        "test_accuracy": 0.2807618975639343,
+        "global_path_norm": 9.875910849754806,
+        "local_path_norm": 9.875910849754806,
+        "time": "2024-10-24T20:51:46.339030"
+    },
+    {
+        "model_id": "tmp1ei2pjcn.npz",
+        "training_loss": 3.953956127166748,
+        "training_accuracy": 0.28819671273231506,
+        "test_loss": 3.849339723587036,
+        "test_accuracy": 0.29695236682891846,
+        "global_path_norm": 9.993789079218757,
+        "local_path_norm": 9.993789079218757,
+        "time": "2024-10-24T20:51:53.534182"
+    },
+    {
+        "model_id": "tmp9ftw67o6.npz",
+        "training_loss": 3.948582172393799,
+        "training_accuracy": 0.294692724943161,
+        "test_loss": 3.8596975803375244,
+        "test_accuracy": 0.3020952343940735,
+        "global_path_norm": 10.103074340504515,
+        "local_path_norm": 10.103074340504515,
+        "time": "2024-10-24T20:51:59.998818"
+    },
+    {
+        "model_id": "tmp61e09a7n.npz",
+        "training_loss": 3.9365382194519043,
+        "training_accuracy": 0.3025204539299011,
+        "test_loss": 3.8546786308288574,
+        "test_accuracy": 0.3064761757850647,
+        "global_path_norm": 10.210428938864448,
+        "local_path_norm": 10.210428938864448,
+        "time": "2024-10-24T20:52:07.304108"
+    },
+    {
+        "model_id": "tmpmhnl4ay5.npz",
+        "training_loss": 3.8346152305603027,
+        "training_accuracy": 0.3117448389530182,
+        "test_loss": 3.766031503677368,
+        "test_accuracy": 0.3142857253551483,
+        "global_path_norm": 10.32018978210536,
+        "local_path_norm": 10.32018978210536,
+        "time": "2024-10-24T20:52:15.088591"
+    },
+    {
+        "model_id": "tmpejd9751i.npz",
+        "training_loss": 3.645348310470581,
+        "training_accuracy": 0.322430819272995,
+        "test_loss": 3.587960958480835,
+        "test_accuracy": 0.32647618651390076,
+        "global_path_norm": 10.419530144346965,
+        "local_path_norm": 10.419530144346965,
+        "time": "2024-10-24T20:52:22.172853"
+    },
+    {
+        "model_id": "tmpi96n9ols.npz",
+        "training_loss": 3.2594525814056396,
+        "training_accuracy": 0.343153178691864,
+        "test_loss": 3.2419586181640625,
+        "test_accuracy": 0.34019047021865845,
+        "global_path_norm": 10.508148210686269,
+        "local_path_norm": 10.508148210686269,
+        "time": "2024-10-24T20:52:28.613005"
+    },
+    {
+        "model_id": "tmphaset63t.npz",
+        "training_loss": 3.17219877243042,
+        "training_accuracy": 0.3456866443157196,
+        "test_loss": 3.165186643600464,
+        "test_accuracy": 0.34495237469673157,
+        "global_path_norm": 10.59837919835293,
+        "local_path_norm": 10.59837919835293,
+        "time": "2024-10-24T20:52:35.498409"
+    },
+    {
+        "model_id": "tmp82p74m_g.npz",
+        "training_loss": 3.2854490280151367,
+        "training_accuracy": 0.3426334857940674,
+        "test_loss": 3.2880587577819824,
+        "test_accuracy": 0.3417142927646637,
+        "global_path_norm": 10.68021711307394,
+        "local_path_norm": 10.68021711307394,
+        "time": "2024-10-24T20:52:41.353536"
+    },
+    {
+        "model_id": "tmpya2i5esc.npz",
+        "training_loss": 3.3939685821533203,
+        "training_accuracy": 0.33295440673828125,
+        "test_loss": 3.389080047607422,
+        "test_accuracy": 0.33580952882766724,
+        "global_path_norm": 10.764396697067191,
+        "local_path_norm": 10.764396697067191,
+        "time": "2024-10-24T20:52:49.725796"
+    },
+    {
+        "model_id": "tmp98htry3g.npz",
+        "training_loss": 3.6130549907684326,
+        "training_accuracy": 0.3246394693851471,
+        "test_loss": 3.618096351623535,
+        "test_accuracy": 0.3272380828857422,
+        "global_path_norm": 10.858091692945052,
+        "local_path_norm": 10.858091692945052,
+        "time": "2024-10-24T20:52:56.775759"
+    },
+    {
+        "model_id": "tmp3v2xflny.npz",
+        "training_loss": 3.4125521183013916,
+        "training_accuracy": 0.3390606641769409,
+        "test_loss": 3.4255661964416504,
+        "test_accuracy": 0.33657142519950867,
+        "global_path_norm": 10.939095691357569,
+        "local_path_norm": 10.939095691357569,
+        "time": "2024-10-24T20:53:04.163371"
+    },
+    {
+        "model_id": "tmp9gbzkh7c.npz",
+        "training_loss": 3.2527034282684326,
+        "training_accuracy": 0.3565025329589844,
+        "test_loss": 3.293339729309082,
+        "test_accuracy": 0.3478095233440399,
+        "global_path_norm": 11.016879568961972,
+        "local_path_norm": 11.016879568961972,
+        "time": "2024-10-24T20:53:12.399022"
+    },
+    {
+        "model_id": "tmprwqzpign.npz",
+        "training_loss": 3.2323672771453857,
+        "training_accuracy": 0.35569053888320923,
+        "test_loss": 3.279600143432617,
+        "test_accuracy": 0.3466666638851166,
+        "global_path_norm": 11.09335885231433,
+        "local_path_norm": 11.09335885231433,
+        "time": "2024-10-24T20:53:21.177776"
+    },
+    {
+        "model_id": "tmp0re3f9io.npz",
+        "training_loss": 3.4895811080932617,
+        "training_accuracy": 0.3432181477546692,
+        "test_loss": 3.522157669067383,
+        "test_accuracy": 0.3382857143878937,
+        "global_path_norm": 11.174338841348053,
+        "local_path_norm": 11.174338841348053,
+        "time": "2024-10-24T20:53:30.140545"
+    },
+    {
+        "model_id": "tmp6k1_scdc.npz",
+        "training_loss": 3.4118270874023438,
+        "training_accuracy": 0.34305572509765625,
+        "test_loss": 3.407874345779419,
+        "test_accuracy": 0.34057143330574036,
+        "global_path_norm": 11.247153027896,
+        "local_path_norm": 11.247153027896,
+        "time": "2024-10-24T20:53:37.492445"
+    },
+    {
+        "model_id": "tmp313czbcx.npz",
+        "training_loss": 3.5436956882476807,
+        "training_accuracy": 0.3429258167743683,
+        "test_loss": 3.537663221359253,
+        "test_accuracy": 0.3367618918418884,
+        "global_path_norm": 11.325716001937492,
+        "local_path_norm": 11.325716001937492,
+        "time": "2024-10-24T20:53:43.984972"
+    },
+    {
+        "model_id": "tmp1o44xcod.npz",
+        "training_loss": 3.4348928928375244,
+        "training_accuracy": 0.3467260003089905,
+        "test_loss": 3.4254610538482666,
+        "test_accuracy": 0.3386666774749756,
+        "global_path_norm": 11.401276975352417,
+        "local_path_norm": 11.401276975352417,
+        "time": "2024-10-24T20:53:50.253346"
+    },
+    {
+        "model_id": "tmpcxr5vl6l.npz",
+        "training_loss": 3.3860604763031006,
+        "training_accuracy": 0.3526698648929596,
+        "test_loss": 3.3810408115386963,
+        "test_accuracy": 0.3451428711414337,
+        "global_path_norm": 11.476172267233817,
+        "local_path_norm": 11.476172267233817,
+        "time": "2024-10-24T20:53:56.399888"
+    },
+    {
+        "model_id": "tmpwy0ljcjs.npz",
+        "training_loss": 3.2996115684509277,
+        "training_accuracy": 0.36637651920318604,
+        "test_loss": 3.3175466060638428,
+        "test_accuracy": 0.36095237731933594,
+        "global_path_norm": 11.549870537366713,
+        "local_path_norm": 11.549870537366713,
+        "time": "2024-10-24T20:54:03.671460"
+    },
+    {
+        "model_id": "tmpzmj7fo0t.npz",
+        "training_loss": 3.332880973815918,
+        "training_accuracy": 0.3611147105693817,
+        "test_loss": 3.335308790206909,
+        "test_accuracy": 0.35600000619888306,
+        "global_path_norm": 11.617578085597323,
+        "local_path_norm": 11.617578085597323,
+        "time": "2024-10-24T20:54:10.940603"
+    },
+    {
+        "model_id": "tmp9w34j7e0.npz",
+        "training_loss": 3.3046610355377197,
+        "training_accuracy": 0.37300246953964233,
+        "test_loss": 3.323681592941284,
+        "test_accuracy": 0.36609524488449097,
+        "global_path_norm": 11.683321935309829,
+        "local_path_norm": 11.683321935309829,
+        "time": "2024-10-24T20:54:16.856934"
+    },
+    {
+        "model_id": "tmp6l2wqz8s.npz",
+        "training_loss": 3.433919668197632,
+        "training_accuracy": 0.3646225929260254,
+        "test_loss": 3.4371886253356934,
+        "test_accuracy": 0.3628571331501007,
+        "global_path_norm": 11.75115214441509,
+        "local_path_norm": 11.75115214441509,
+        "time": "2024-10-24T20:54:24.148616"
+    },
+    {
+        "model_id": "tmpxentf4yc.npz",
+        "training_loss": 3.367302179336548,
+        "training_accuracy": 0.3715733289718628,
+        "test_loss": 3.3732924461364746,
+        "test_accuracy": 0.36838096380233765,
+        "global_path_norm": 11.817137600042981,
+        "local_path_norm": 11.817137600042981,
+        "time": "2024-10-24T20:54:30.492217"
+    },
+    {
+        "model_id": "tmpndvvus1z.npz",
+        "training_loss": 3.480381965637207,
+        "training_accuracy": 0.3653046786785126,
+        "test_loss": 3.4793598651885986,
+        "test_accuracy": 0.36399999260902405,
+        "global_path_norm": 11.881316904103366,
+        "local_path_norm": 11.881316904103366,
+        "time": "2024-10-24T20:54:37.476167"
+    },
+    {
+        "model_id": "tmpnr4gpl3w.npz",
+        "training_loss": 3.294771671295166,
+        "training_accuracy": 0.37741976976394653,
+        "test_loss": 3.3156015872955322,
+        "test_accuracy": 0.37371429800987244,
+        "global_path_norm": 11.944237530318293,
+        "local_path_norm": 11.944237530318293,
+        "time": "2024-10-24T20:54:44.660405"
+    },
+    {
+        "model_id": "tmpwc1kimqd.npz",
+        "training_loss": 3.315941572189331,
+        "training_accuracy": 0.3803105056285858,
+        "test_loss": 3.3538460731506348,
+        "test_accuracy": 0.3733333349227905,
+        "global_path_norm": 12.00603524075073,
+        "local_path_norm": 12.00603524075073,
+        "time": "2024-10-24T20:54:52.501016"
+    },
+    {
+        "model_id": "tmp0sgi4k8w.npz",
+        "training_loss": 3.3437201976776123,
+        "training_accuracy": 0.38456541299819946,
+        "test_loss": 3.3826186656951904,
+        "test_accuracy": 0.37504762411117554,
+        "global_path_norm": 12.065149678370119,
+        "local_path_norm": 12.065149678370119,
+        "time": "2024-10-24T20:54:58.743757"
+    },
+    {
+        "model_id": "tmpbdy6dsho.npz",
+        "training_loss": 3.2267518043518066,
+        "training_accuracy": 0.3936598598957062,
+        "test_loss": 3.279359817504883,
+        "test_accuracy": 0.38419046998023987,
+        "global_path_norm": 12.123577388404255,
+        "local_path_norm": 12.123577388404255,
+        "time": "2024-10-24T20:55:05.566669"
+    },
+    {
+        "model_id": "tmpz2nmlxir.npz",
+        "training_loss": 3.347257137298584,
+        "training_accuracy": 0.39089906215667725,
+        "test_loss": 3.400259256362915,
+        "test_accuracy": 0.3817142844200134,
+        "global_path_norm": 12.182252037676475,
+        "local_path_norm": 12.182252037676475,
+        "time": "2024-10-24T20:55:12.936534"
+    },
+    {
+        "model_id": "tmpslx1latx.npz",
+        "training_loss": 3.243647813796997,
+        "training_accuracy": 0.39872679114341736,
+        "test_loss": 3.291731119155884,
+        "test_accuracy": 0.39180952310562134,
+        "global_path_norm": 12.241009273929727,
+        "local_path_norm": 12.241009273929727,
+        "time": "2024-10-24T20:55:19.216376"
+    }
+]
