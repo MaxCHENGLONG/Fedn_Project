@@ -34,7 +34,7 @@ def load_data(data_path, is_train=True):
     """
     # 如果未提供数据路径，则从环境变量或默认路径获取
     if data_path is None:
-        data_path = os.environ.get("FEDN_DATA_PATH", abs_path + "/data/clients/1/mnist.pt")
+        data_path = os.environ.get("FEDN_DATA_PATH", abs_path + "/data/clients/1/cifar.pt")
 
     # 加载数据
     data = torch.load(data_path, weights_only=True)
@@ -133,7 +133,7 @@ def split(out_dir="data"):
                 "x_test": test_splits[i]['x'],
                 "y_test": test_splits[i]['y'],
             },
-            f"{subdir}/cifar100.pt",
+            f"{subdir}/cifar.pt",
         )
 
 
