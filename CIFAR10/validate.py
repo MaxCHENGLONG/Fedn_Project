@@ -7,13 +7,13 @@ from model import load_parameters
 from data import load_data
 from fedn.utils.helpers.helpers import save_metrics
 from datetime import datetime
+
 # 获取当前文件的目录路径
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.abspath(dir_path))
 
 def calculate_path_norm(model):
-    """
-    计算神经网络的路径范数。
+    """计算神经网络的路径范数。
 
     :param model: PyTorch 模型。
     :type model: torch.nn.Module
@@ -41,9 +41,14 @@ def validate(in_model_path, out_json_path, data_path=None):
     :param data_path: 数据文件的路径。
     :type data_path: str
     """
-    # 加载数据
+    # 加载数据 
     x_train, y_train = load_data(data_path)
     x_test, y_test = load_data(data_path, is_train=False)
+
+    # 确保数据格式正确（从 NHWC 转为 NCHW）
+    if isinstance(x_train, torch.Tensor):
+        x_train = x_train.permute(0, 3, 1, 2)  # 转换维度 (batch_size, height, width, channels) -> (batch_size, channels, height, width)
+        x_test = x_test.permute(0, 3, 1, 2)
 
     # 加载模型
     model = load_parameters(in_model_path)
@@ -54,7 +59,7 @@ def validate(in_model_path, out_json_path, data_path=None):
     print(f"Path-norm of the Global Model before Validation: {global_path_norm}")
 
     # 评估模型
-    criterion = torch.nn.NLLLoss()  # 使用负对数似然损失函数
+    criterion = torch.nn.NLLLoss()  # 使用负对数应然损失函数
     with torch.no_grad():
         train_out = model(x_train)  # 计算训练集的输出
         training_loss = criterion(train_out, y_train)  # 计算训练集的损失
@@ -80,7 +85,7 @@ def validate(in_model_path, out_json_path, data_path=None):
     }
 
     # 构造文件名（使用model_id作为文件名）
-    client_id = os.environ.get("CLIENT_ID",1)
+    client_id = os.environ.get("CLIENT_ID", 1)
     alpha = float(os.environ.get("ALPHA", 10))
     filename = f"report_{client_id}_{alpha}.json"
 
@@ -97,7 +102,7 @@ def validate(in_model_path, out_json_path, data_path=None):
         with open(filename, 'w') as f:
             json.dump([report], f, indent=4)
 
-    save_metrics(report,out_json_path)
+    save_metrics(report, out_json_path)
 
 if __name__ == "__main__":
     # 调用验证函数，传入命令行参数
