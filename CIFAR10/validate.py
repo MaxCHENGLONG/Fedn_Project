@@ -49,9 +49,11 @@ def validate(in_model_path, out_json_path, data_path=None):
     if isinstance(x_train, torch.Tensor):
         x_train = x_train.permute(0, 3, 1, 2)  # 转换维度 (batch_size, height, width, channels) -> (batch_size, channels, height, width)
         x_test = x_test.permute(0, 3, 1, 2)
-
+    device = torch.device("cuda: 0" if torch.cuda.is_available() else "cpu")
+    print(f"Device: {device}")
     # 加载模型
     model = load_parameters(in_model_path)
+    model = model.to(device)
     model.eval()
 
     # 自定义步骤：在验证之前计算全局模型的路径范数
@@ -59,7 +61,7 @@ def validate(in_model_path, out_json_path, data_path=None):
     print(f"Path-norm of the Global Model before Validation: {global_path_norm}")
 
     # 评估模型
-    criterion = torch.nn.NLLLoss()  # 使用负对数应然损失函数
+    criterion = torch.nn.CrossEntropyLoss() 
     with torch.no_grad():
         train_out = model(x_train)  # 计算训练集的输出
         training_loss = criterion(train_out, y_train)  # 计算训练集的损失
