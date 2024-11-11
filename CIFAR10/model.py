@@ -24,7 +24,7 @@ def compile_model():
             self.pool = torch.nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
             self.fc1 = torch.nn.Linear(256 * 4 * 4, 1024)
             self.fc2 = torch.nn.Linear(1024, 512)
-            self.fc3 = torch.nn.Linear(512, 100)
+            self.fc3 = torch.nn.Linear(512, 10)
 
         def forward(self, x):
             x = torch.nn.functional.relu(self.conv1(x))
@@ -36,7 +36,7 @@ def compile_model():
             x = x.view(-1, 256 * 4 * 4)
             x = torch.nn.functional.relu(self.fc1(x))
             x = torch.nn.functional.relu(self.fc2(x))
-            x = torch.nn.functional.log_softmax(self.fc3(x), dim=1)
+            x = torch.nn.functional.softmax(self.fc3(x), dim=1)
             return x
 
     return Net()
