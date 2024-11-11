@@ -135,7 +135,7 @@ def train(in_model_path, out_model_path, data_path=None, batch_size=32, epochs=1
 
     # Training setup
     optimizer = torch.optim.SGD(model.parameters(), lr=lr)
-    criterion = torch.nn.NLLLoss()
+    criterion = torch.nn.CrossEntropyLoss()
     n_batches = len(train_loader)
 
     # Training loop

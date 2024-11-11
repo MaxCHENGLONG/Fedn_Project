@@ -119,8 +119,8 @@ def split(out_dir="data"):
         os.mkdir(f"{out_dir}/clients")
 
     # 加载训练和测试数据集
-    train_data = torchvision.datasets.CIFAR100(root=f"{out_dir}/train", download=True, transform=torchvision.transforms.ToTensor(), train=True)
-    test_data = torchvision.datasets.CIFAR100(root=f"{out_dir}/test", download=True, transform=torchvision.transforms.ToTensor(), train=False)
+    train_data = torchvision.datasets.CIFAR10(root=f"{out_dir}/train", download=True, transform=torchvision.transforms.ToTensor(), train=True)
+    test_data = torchvision.datasets.CIFAR10(root=f"{out_dir}/test", download=True, transform=torchvision.transforms.ToTensor(), train=False)
 
     # 使用Dirichlet分布进行数据划分，加入不平衡的条件
     train_splits = splitset_by_dirichlet_imbalanced(train_data, num_clients, alpha, imbalance_ratios)

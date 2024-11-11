@@ -36,7 +36,7 @@ def compile_model():
             x = x.view(-1, 256 * 4 * 4)
             x = torch.nn.functional.relu(self.fc1(x))
             x = torch.nn.functional.relu(self.fc2(x))
-            x = torch.nn.functional.softmax(self.fc3(x), dim=1)
+            x = self.fc3(x)  # 不使用 softmax
             return x
 
     return Net()
