@@ -59,7 +59,7 @@ def validate(in_model_path, out_json_path, data_path=None):
     print(f"Path-norm of the Global Model before Validation: {global_path_norm}")
 
     # 评估模型
-    criterion = torch.nn.NLLLoss()  # 使用负对数应然损失函数
+    criterion = torch.nn.CrossEntropyLoss() 
     with torch.no_grad():
         train_out = model(x_train)  # 计算训练集的输出
         training_loss = criterion(train_out, y_train)  # 计算训练集的损失
