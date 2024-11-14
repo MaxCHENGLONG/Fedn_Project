@@ -51,8 +51,10 @@ def validate(in_model_path, out_json_path, data_path=None):
         x_test = x_test.permute(0, 3, 1, 2)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
-    x_train, y_train = x_train.to(device), y_train.to(device)
-    x_test, y_test = x_test.to(device), y_test.to(device)
+    train_dataset = torch.utils.data.TensorDataset(x_train, y_train)
+    test_dataset = torch.utils.data.TensorDataset(x_test, y_test)
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=False)
+    test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False)
     # 加载模型
     model = load_parameters(in_model_path)
     model = model.to(device)
@@ -64,14 +66,36 @@ def validate(in_model_path, out_json_path, data_path=None):
 
     # 评估模型
     criterion = torch.nn.CrossEntropyLoss() 
+    total_train_loss = 0
+    total_train_correct = 0
+    total_test_loss = 0
+    total_test_correct = 0
+    # 训练集评估
     with torch.no_grad():
-        train_out = model(x_train)  # 计算训练集的输出
-        training_loss = criterion(train_out, y_train)  # 计算训练集的损失
-        training_accuracy = torch.sum(torch.argmax(train_out, dim=1) == y_train) / len(train_out)  # 计算训练集的准确率
-        test_out = model(x_test)  # 计算测试集的输出
-        test_loss = criterion(test_out, y_test)  # 计算测试集的损失
-        test_accuracy = torch.sum(torch.argmax(test_out, dim=1) == y_test) / len(test_out)  # 计算测试集的准确率
-
+        for batch_x, batch_y in train_loader:
+            batch_x, batch_y = batch_x.to(device), batch_y.to(device)
+            outputs = model(batch_x)
+            loss = criterion(outputs, batch_y)
+            total_train_loss += loss.item() * batch_x.size(0)
+            total_train_correct += torch.sum(torch.argmax(outputs, dim=1) == batch_y).item()
+            
+            # 清理缓存
+            torch.cuda.empty_cache()
+         # 测试集评估
+        for batch_x, batch_y in test_loader:
+            batch_x, batch_y = batch_x.to(device), batch_y.to(device)
+            outputs = model(batch_x)
+            loss = criterion(outputs, batch_y)
+            total_test_loss += loss.item() * batch_x.size(0)
+            total_test_correct += torch.sum(torch.argmax(outputs, dim=1) == batch_y).item()
+            
+            # 清理缓存
+            torch.cuda.empty_cache()
+        # 计算最终指标
+    training_loss = total_train_loss / len(x_train)
+    training_accuracy = total_train_correct / len(x_train)
+    test_loss = total_test_loss / len(x_test)
+    test_accuracy = total_test_correct / len(x_test)
     # 在验证之后计算本地模型的路径范数
     local_path_norm = calculate_path_norm(model)
     print(f"Path-norm of the Local Model after Validation: {local_path_norm}")
@@ -79,10 +103,10 @@ def validate(in_model_path, out_json_path, data_path=None):
     # 添加时间戳
     report = {
         "model_id": os.path.basename(in_model_path),  # 模型唯一标识符
-        "training_loss": training_loss.item(),  # 训练损失
-        "training_accuracy": training_accuracy.item(),  # 训练准确率
-        "test_loss": test_loss.item(),  # 测试损失
-        "test_accuracy": test_accuracy.item(),  # 测试准确率
+        "training_loss": training_loss,  # 训练损失
+        "training_accuracy": training_accuracy,  # 训练准确率
+        "test_loss": test_loss,  # 测试损失
+        "test_accuracy": test_accuracy,  # 测试准确率
         "global_path_norm": global_path_norm,  # 全局模型路径范数
         "local_path_norm": local_path_norm,  # 本地模型路径范数
         "time": datetime.now().isoformat(),
