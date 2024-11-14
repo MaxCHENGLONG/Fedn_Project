@@ -18,7 +18,7 @@ sys.path.append(os.path.abspath(dir_path))
 
 def train(in_model_path, out_model_path, data_path=None, batch_size=32, epochs=1, lr=0.01):
     # Set device
-    device = torch.device("cuda: 0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
     # Load data and model
     x_train, y_train = load_data(data_path)
