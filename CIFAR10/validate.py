@@ -49,7 +49,7 @@ def validate(in_model_path, out_json_path, data_path=None):
     if isinstance(x_train, torch.Tensor):
         x_train = x_train.permute(0, 3, 1, 2)  # 转换维度 (batch_size, height, width, channels) -> (batch_size, channels, height, width)
         x_test = x_test.permute(0, 3, 1, 2)
-    device = torch.device("cuda: 0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
     # 加载模型
     model = load_parameters(in_model_path)
