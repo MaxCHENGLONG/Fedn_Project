@@ -51,6 +51,8 @@ def validate(in_model_path, out_json_path, data_path=None):
         x_test = x_test.permute(0, 3, 1, 2)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
+    x_train, y_train = x_train.to(device), y_train.to(device)
+    x_test, y_test = x_test.to(device), y_test.to(device)
     # 加载模型
     model = load_parameters(in_model_path)
     model = model.to(device)
