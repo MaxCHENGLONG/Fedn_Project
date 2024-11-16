@@ -1,7 +1,8 @@
 import collections
 
 import torch
-
+import torch.nn as nn
+import torchvision.models.resnet as resnet
 from fedn.utils.helpers.helpers import get_helper
 
 HELPER_MODULE = "numpyhelper"
@@ -14,32 +15,63 @@ def compile_model():
     :return: The compiled model.
     :rtype: torch.nn.Module
     """
+    class CifarResNet(nn.Module):
+        def __init__(
+            self,
+            layers=[1, 1, 1],
+            num_classes=10,
+            channels=[64, 128, 256]
+        ):
+            super(CifarResNet, self).__init__()
+            self.inplanes = channels[0]
 
-    class Net(torch.nn.Module):
-        def __init__(self):
-            super(Net, self).__init__()
-            self.conv1 = torch.nn.Conv2d(3, 64, kernel_size=3, padding=1)
-            self.conv2 = torch.nn.Conv2d(64, 128, kernel_size=3, padding=1)
-            self.conv3 = torch.nn.Conv2d(128, 256, kernel_size=3, padding=1)
-            self.pool = torch.nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
-            self.fc1 = torch.nn.Linear(256 * 4 * 4, 1024)
-            self.fc2 = torch.nn.Linear(1024, 512)
-            self.fc3 = torch.nn.Linear(512, 10)
+            self.conv1 = nn.Conv2d(3, channels[0], kernel_size=3, stride=1, padding=1, bias=False)
+            self.bn1 = nn.BatchNorm2d(channels[0])
+            self.relu = nn.ReLU(inplace=True)
+            self.maxpool = nn.Identity()
+
+            self.layer1 = self._make_layer(resnet.BasicBlock, channels[0], layers[0])
+            self.layer2 = self._make_layer(resnet.BasicBlock, channels[1], layers[1], stride=2)
+            self.layer3 = self._make_layer(resnet.BasicBlock, channels[2], layers[2], stride=2)
+
+            # 动态计算全连接层输入大小
+            dummy_input = torch.randn(1, 3, 32, 32)
+            dummy_output = self.layer3(self.layer2(self.layer1(self.maxpool(self.relu(self.bn1(self.conv1(dummy_input)))))))
+            num_features = dummy_output.view(1, -1).size(1)
+
+            self.fc = nn.Linear(num_features, num_classes)
+
+        def _make_layer(self, block, planes, blocks, stride=1):
+            downsample = None
+            if stride != 1 or self.inplanes != planes * block.expansion:
+                downsample = nn.Sequential(
+                    nn.Conv2d(self.inplanes, planes * block.expansion,
+                            kernel_size=1, stride=stride, bias=False),
+                    nn.BatchNorm2d(planes * block.expansion),
+                )
+
+            layers = []
+            layers.append(block(self.inplanes, planes, stride, downsample))
+            self.inplanes = planes * block.expansion
+            for _ in range(1, blocks):
+                layers.append(block(self.inplanes, planes))
+            
+            return nn.Sequential(*layers)
 
         def forward(self, x):
-            x = torch.nn.functional.relu(self.conv1(x))
-            x = self.pool(x)
-            x = torch.nn.functional.relu(self.conv2(x))
-            x = self.pool(x)
-            x = torch.nn.functional.relu(self.conv3(x))
-            x = self.pool(x)
-            x = x.view(-1, 256 * 4 * 4)
-            x = torch.nn.functional.relu(self.fc1(x))
-            x = torch.nn.functional.relu(self.fc2(x))
-            x = self.fc3(x)  # 不使用 softmax
-            return x
+            x = self.conv1(x)
+            x = self.bn1(x)
+            x = self.relu(x)
+            x = self.maxpool(x)
 
-    return Net()
+            x = self.layer1(x)
+            x = self.layer2(x)
+            x = self.layer3(x)
+
+            x = torch.flatten(x, 1)
+            x = self.fc(x)
+
+            return x
 
 
 def save_parameters(model, out_path):
